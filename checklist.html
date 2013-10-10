@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="_js/checklist.js"></script>
+        <link rel="stylesheet" href="_css/checklist.css">
+    </head>
+    <body>
+        <h1>Website Best Practices Review</h1>
+        <div id="info">
+            <div>
+                <label>Group Name</label>
+                <input type="text" id="group" placeholder="AwesomeTrailz!">
+            </div>
+            <div>
+                <label for="names">Reviewed by<label>
+                <input type="text" id="reviewers" placeholder="Bob, George, Lisa">
+            </div>
+            <div id="error">
+                Missing required field.
+            </div>
+            <div id="actions">
+                <button id="clear">Clear All</button>
+                <button id="email">Save and Email</button>
+            </div>
+        </div>
+        <div id="score-wrapper">
+            <div id="score">0</div>
+            <span>Current Score</span>
+        </div>
+        <div id="tabs">
+            <div class="tab active"><a href="#html">HTML</a></div>
+            <div class="tab"><a href="#css">CSS</a></div>
+            <div class="tab"><a href="#javascript">JavaScript</a></div>
+        </div>
+        <div id="quiz">
+            <div id="html">
+                <h2>HTML</h2>
+                <ol>
+                    <li>
+                        <div>There is a doctype declaration</div>
+                        <code>&lt;!DOCTYPE html&gt;</code>
+                    </li>
+                    <li>
+                        <div>The html tag has a "lang" attribute</div>
+                        <code>&lt;html lang="en"&gt;</code>
+                    </li>
+                    <li>
+                        <div>The charset is defined</div>
+                        <code>&lt;meta charset="utf-8"&gt;</code>
+                    </li>
+                    <li>
+                        <div>The style and script tags do not have the "type" attribute.</div>
+                        <code>&lt;script src="..." &gt;&lt;/script&gt;</code>
+                    </li>
+                    <li>
+                        <div>All tags and attributes are lowercase</div>
+                        <code>&lt;div&gt; not &lt;DIV&gt;</code>
+                    </li>
+                    <li>
+                        <div>Attribute values are quoted with double quotes</div>
+                        <code>&lt;div id="sidebar"&gt;...&lt;/div&gt;</code>
+                    </li>
+                    <li>
+                        <div>The document uses consistent indentation of child elements</div>
+<pre>
+    <code>
+    &lt;div&gt;
+        &lt;span&gt;Hello!&lt;/span&gt;
+    &lt;/div&gt;
+    </code>
+</pre>
+                    </li>
+                    <li>
+                        <div>Each open tag has a corresponding close tag (if <a href="http://stackoverflow.com/questions/3008593/html-include-or-exclude-optional-closing-tags">one is required</a>)</div>
+                        <code>&lt;span&gt;Hello, world.&lt;/span&gt;</code>
+                    </li>
+                    <li>
+                        <div>Tags that are void do not have a close tag nor a trailing slash<br>
+                        (area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr)</div>
+                        <code>&lt;hr&gt; not &lt;hr /&gt;</code>
+                    </li>
+                    <li>
+                        <div>All images have alt attributes, except those that are used only for visual styling</div>
+                        <code>&lt;img src="mydog.jpg" alt="my dog Sparky"&gt;</code>
+                    </li>
+                    <li>
+                        <div>Forced line breaks are used sparingly</div>
+                        <code>&lt;p&gt;In other words, not this:&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</code>
+                    </li>
+                    <li>
+                        <div>Tables are only used for tabular data</div>
+                        <code>&lt;div&gt;Use divs and CSS instead!&lt;/div&gt;</code>
+                    </li>
+                    <li>
+                        <div>The document does not use any <a href="http://www.tutorialspoint.com/html5/html5_deprecated_tags.htm">deprecated tags or attributes</a></div>
+                        <code>Not this! &lt;body bgcolor="#eee"&gt;</code>
+                    </li>
+                    <li>
+                        <div>The document uses inline styles sparingly or not at all</div>
+                        <code>Not this! &lt;body style="background-color:#eee"&gt;</code>
+                    </li>
+                </ol>
+            </div>
+            <div id="css">
+                <h2>CSS</h2>
+                <ol>
+                    <li>
+                        <div>Class and ID values are semantic, not presentational</div>
+                        <code>#login { ... } /* versus #blue-border */</code>
+                    </li>
+                    <li>
+                        <div>Class and ID values use either camelCase or hyphens for multiple words (and the choice is consistent)</div>
+                        <code>#searchButton { ... }<br>
+                        #search-button { ... } </code>
+                    </li>
+                    <li>
+                        <div>The stylesheet uses <a href="http://www.w3.org/TR/CSS21/about.html#shorthand">CSS shorthand styles</a> when possible</div>
+                        <code>padding: 10px 5px 2px 5px;</code>    
+                    </li>
+                    <li>
+                        <div>Zero values do not have units specified</div>
+                        <code>margin: 0; /* not 0px */</code>    
+                    </li>
+                    <li>
+                        <div>Colors use 3 character hexadecimal short-hand when possible</div>
+                        <code>color:#222 /* not #222222 */</code>    
+                    </li>
+                    <li>
+                        <div>Every declaration ends with a semi-colon, even the last in the block</div>
+                        <code>p { color:#222; font-size:1em; }</code>    
+                    </li>
+                    <li>
+                        <div>The stylesheet uses single quotes in property values</div>
+                        <code>input[type='text'] { font-weight:bold; }</code>  
+                    </li>
+                    <li>
+                        <div>The stylesheet uses comments to group styles logically</div>
+                        <code>/* Footer */<br>
+                        #footer {  ... } </code> 
+                    </li>
+                    <li>
+                        <div>All style declarations are lowercase</div>
+                        <code>p { color: #eee } not p { color:#EEE } </code>
+                    </li>
+                    <li>
+                        <div>None of the CSS selectors use more than one ID</div>
+                        <code>#header .search #quicksearch { ... } /* not good */ </code>
+                    </li>
+                </ol>
+            </div>
+            <div id="javascript">
+                <h2>JavaScript/jQuery</h2>
+                <ol>
+                    <li>
+                        <div>The code uses proper white space and indentation</div>
+<pre>
+    <code>
+$(document.ready(function() {
+$('#test').click(function() {
+console.log('this is not very readable');
+});
+});
+    </code>
+</pre>
+<pre>
+    <code>
+$(document.ready(function() {
+    $('#test').click(function() {
+        console.log('this is better');
+    });
+});
+    </code>
+</pre>
+                    </li>
+                    <li>
+                        <div>Each statement terminates in a semi-colon</div>
+<pre>
+    <code>
+function alertMe() {
+    alert('hello')    //missing semi-colon
+}
+    </code>
+</pre>
+                    </li>
+                    <li>
+                        <div>There is only one statement per line</div>
+<pre>
+    <code>
+var index = 0; index++; alert(index); // avoid
+
+//this is more readable for anything but the simplest statements
+var index = 0;
+index++;
+alert(index);
+    </code>
+</pre>
+                    </li>
+                    <li>
+                        <div>All variables are declared with var</div>
+                        <code>var index = 0;</code>
+                    </li>
+                    <li>
+                        <div>The code avoids the eval() statement</div>
+                        <code>var userInfo = eval(feed); //no!</code>
+                    </li>
+                    <li>
+                        <div>The code uses single quotes</div>
+                        <code>var name = 'Bob';</code>
+                    </li>
+                    <li>
+                        <div>The for... in loop is only used to iterate through properties of objects (not arrays)</div>
+<pre>
+    <code>
+for (var prop in myObj) {
+    //do something with myObj[prop]
+}
+    </code>
+</pre>
+                    </li>
+                    <li>
+                        <div>Functions and unclear statements are documented with code comments</div>
+                        <code>var zip = elements[1]; //zip code is returned from API in position 1</code>
+                    </li>
+                    <li>
+                        <div>Variable names are camelCase and are noun phrases</div>
+                        <code>var firstName = "George";</code>
+                    </li>
+                    <li>
+                        <div>Function names are lowercase and are verb phrases</div>
+                        <code>function getName() { return firstName; }</code>
+                    </li>
+                    <li>
+                        <div>Class names are SentenceCase and are noun phrases</div>
+                        <code>function Car() { ... }</code>
+                    </li>
+                    <li>
+                        <div>The code avoids redundant checks for boolean values</div>
+                        <code>if (y != null && y != '') { ... } <br>
+                                if (y) { ... } //does the same thing and is much shorter</code>
+                    </li>
+                    <li>
+                        <div>The strict operator ("triple equals") is used when making comparisons</div>
+                        <code>if (name === 'Bob') { ... }  //not ==</code>
+                    </li>
+                    <li>
+                        <div>The code within a conditional or iterator block (if, else, for, while etc.) is surrounded by braces</div>
+<pre>
+    <code>
+for (var i = 0; i < arr.length; i++) 
+    console.log(arr[i]); //this technically will not cause an error but should be avoided
+
+    </code>
+</pre>
+                    </li>
+                    <li>
+                        <div>The jQuery code makes use of function chaining where appropriate</div>
+<pre>
+    <code>
+$('a.selected')
+    .attr('id', 'searchLink')
+    .css('color', '#fff')
+    .click(function() {
+        ...
+    });
+    </code>
+</pre>
+       
+                    </li>
+                    <li>
+                        <div>No line of code is more than 80 characters</div>
+                        <code>// for your reference, this sentence demonstrates what 80 characters looks like</code>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

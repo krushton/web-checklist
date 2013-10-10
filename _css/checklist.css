@@ -1,0 +1,103 @@
+
+body {
+    color:#222;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:1en;
+    padding:10px;
+}
+
+input[type="text"] {
+    width:220px;
+    height:20px;
+}
+
+li {
+    margin-bottom:40px;
+}
+
+code {
+    display:block;
+    margin:10px 30px;
+    color:#ff0047;
+    font-size:1.2em;
+}
+
+pre > code {
+    white-space: pre;
+    margin:0;
+    display: block;
+}
+
+#info {
+    margin-bottom:60px;
+}
+
+#actions {
+    margin-top:20px;
+}
+#info div {
+    margin-bottom:10px;
+}
+
+#quiz {
+    border: 1px solid #eee;
+    background-color:#fff;
+    padding:20px;
+}
+
+#quiz li div {
+    margin-bottom:10px;
+    width:600px;
+}
+
+#css,#javascript {
+    display:none;
+}
+
+#score-wrapper {
+    text-align:center;
+    position:absolute;
+    top:100px;
+    left:400px;
+    border:1px solid #eee;
+    padding:15px 10px;
+    font-size:.8em;
+}
+#score {
+    font-size:3.5em;
+}
+
+#error {
+    color:#fd1010;
+    font-weight:bold;
+    display:none;
+    font-size:.7em;
+}
+
+.answer input {
+    margin:0px 0px 0px 20px;
+}
+
+.tab {
+    color:#fff;
+    padding:3px 10px;
+    border: 1px solid #eee;
+    border-bottom:0px;
+    background-color:#eee;
+    display:inline-block;
+    margin-bottom:-1px;
+}
+             
+.tab.active {
+    padding:5px 15px;
+    background-color:#fff;
+}
+             
+.tab a {
+    text-decoration:none;
+}
+
+.tab.active a {
+    color:#222;
+}
+
