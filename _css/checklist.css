@@ -21,11 +21,6 @@ header {
     margin-top:150px;
 }
 
-input[type="text"] {
-    width:220px;
-    height:20px;
-}
-
 code {
     display:block;
     margin:10px 30px;
@@ -77,13 +72,6 @@ pre > code {
 
 #score {
     font-size:3.5em;
-}
-
-#error {
-    color:#fd1010;
-    font-weight:bold;
-    display:none;
-    font-size:.7em;
 }
 
 .answer input {

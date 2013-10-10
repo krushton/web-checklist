@@ -18,26 +18,6 @@ $(document).ready(function() {
         clear();
     });
     
-    
-    $('#email').click(function() {
-        var groupName = $('#group').val();
-        var reviewers = $('#reviewers').val();
-        var score = $('#score').text();
-        
-        if (!groupName || !reviewers) {
-        
-            $('#error').show();
-            setTimeout(function() {
-                $('#error').hide();
-            }, 2000);
-            
-            return false;
-        }
-        var address = prompt('Email address to send this report to');
-        if (address) {
-            saveAndEmail(address, groupName, reviewers, score);
-        }
-    });
 
 });
 
@@ -50,37 +30,6 @@ function clear() {
         calculate();
     }
 }
-
-//email the result
-function saveAndEmail(em, gr, rev, sc) {
-
-    var d = { 
-        group: gr, 
-        reviewers : rev,
-        score : sc,
-        answers : [],
-        email : em
-    };
-    
-    $('#quiz li').each(function() {
-        var q = $(this).find('div').first().text();
-        var a = $(this).find(':checked').val();
-        d.answers.push({'question' : q, 'answer': a});
-    });
-    
-    $.ajax({
-        url: 'checklist.php',
-        method: 'post',
-        data: d,
-        success: function(data) {
-            alert('The email was sent successfully.');
-        },
-        fail: function(e) {
-            alert('There was an error sending the email');
-        }
-    });
-}
-
 
 //calculate current quiz score
 function calculate() {
