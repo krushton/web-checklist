@@ -1,18 +1,29 @@
 
 body {
     color:#222;
+    background-color: #eee;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size:1en;
+    font-size:1em;
+    margin:0;
+    padding:0;
+}
+
+header {
+    position:absolute;
+    top:0;
+    width:100%;
+    background-color: #eee;
+    text-align:center;
+}
+
+#main {
     padding:10px;
+    margin-top:150px;
 }
 
 input[type="text"] {
     width:220px;
     height:20px;
-}
-
-li {
-    margin-bottom:40px;
 }
 
 code {
@@ -32,9 +43,6 @@ pre > code {
     margin-bottom:60px;
 }
 
-#actions {
-    margin-top:20px;
-}
 #info div {
     margin-bottom:10px;
 }
@@ -43,6 +51,10 @@ pre > code {
     border: 1px solid #eee;
     background-color:#fff;
     padding:20px;
+}
+
+#quiz li {
+    margin-bottom:40px;
 }
 
 #quiz li div {
@@ -57,12 +69,12 @@ pre > code {
 #score-wrapper {
     text-align:center;
     position:absolute;
-    top:100px;
-    left:400px;
-    border:1px solid #eee;
-    padding:15px 10px;
+    top:0;
+    left:0;
+    padding:30px 20px;
     font-size:.8em;
 }
+
 #score {
     font-size:3.5em;
 }
