@@ -1,4 +1,4 @@
-==Web Checklist==
+<h1>Web Checklist</h1>
 
 <p>This interactive checklist can be used to review HTML, CSS, and JavaScript code for adherence to
 a set of best practices: Google style guide for 
