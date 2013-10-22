@@ -7,4 +7,4 @@ a set of best practices: Google style guide for
 
 <p>Answers are saved to the browser to avoid issues with accidental page reloads.</p>
 
-<p>A hosted version is here: <a href="krushton.com/checklist">Web Checklist</a></p>
+<p>A hosted version is here: <a href="http://krushton.com/checklist">Web Checklist</a></p>
